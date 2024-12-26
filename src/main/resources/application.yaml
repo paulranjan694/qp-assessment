@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: qp-assessment
+
+  datasource:
+    url: ${MYSQL_DB_URL:jdbc:mysql://localhost:3306/qp_assessment}
+    username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+  
+  sql:
+    init:
+      mode: always
+
+  app:
+    jwtSecret: ${APP_JWT_SECRET:eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQflKxwRJSMeKKF2QT4f8wpMeJf36POk6yJVad7}
+    jwtExpirationInMS: ${APP_JWT_EXPIRATION:3600000}

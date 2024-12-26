@@ -1,0 +1,421 @@
+{
+	"info": {
+		"_postman_id": "6af5a786-ac39-4969-bced-6f0dd8e17526",
+		"name": "GroceryApp-Api",
+		"description": "API documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8829779"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "get inventory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczNTIzMjA4NywiZXhwIjoxNzM1MjM1Njg3fQ.NjnPbgwy0A2Ugzqa1j5dWBnyUsdgh6PFwXTL-m6qXo9VKzXs6uTke3STMgDW0T7rLofQbH36zL9hIM1q0XyKkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemName\":\"pencil\",\n    \"price\": 10.32,\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/inventory?minAvailableQuantity=15",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "minAvailableQuantity",
+									"value": "15"
+								}
+							]
+						},
+						"description": "Add new grocery items to the system"
+					},
+					"response": []
+				},
+				{
+					"name": "update inventory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczNTIyNzQzMCwiZXhwIjoxNzM1MjMxMDMwfQ.5xuQEvqskxS8-RU7pUaprtnq1TGyvQDhV2VbfK8BaixTH3UDBwSE7a5jiOdKGh7Tbm9r2qhBVL7LBKqQPC9fgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\":{\n        \"1\":20,\n        \"2\":20\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/inventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"inventory"
+							]
+						},
+						"description": "Add new grocery items to the system"
+					},
+					"response": []
+				},
+				{
+					"name": "update an item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczNTE1NDcwMiwiZXhwIjoxNzM1MTU4MzAyfQ.OR4W4JW6GN-AwXLKMDVa2atN3sOcC2KgsN16oHhN8O2UTv6Sfozf961G4jStIEqNp0TA2pdGj3WMYhDwEGg2jw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"itemName\":\"marker\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/items/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"items",
+								"4"
+							]
+						},
+						"description": "Update details (e.g., name, price) of existing grocery items"
+					},
+					"response": []
+				},
+				{
+					"name": "get all items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczNTIyNzQzMCwiZXhwIjoxNzM1MjMxMDMwfQ.5xuQEvqskxS8-RU7pUaprtnq1TGyvQDhV2VbfK8BaixTH3UDBwSE7a5jiOdKGh7Tbm9r2qhBVL7LBKqQPC9fgA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/items",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"items"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "pageSize",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "View existing grocery items"
+					},
+					"response": []
+				},
+				{
+					"name": "delete an item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW5qYW4iLCJpYXQiOjE3MzUxNTIxNjAsImV4cCI6MTczNTE1NTc2MH0.hPscscrrUs7u6T9o3L7iggDgNcwlX4BYONZtDshc4BkpDSs1gTNavlw3lz-gCInvczHVRG6fm5_qX7rkhBnvIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/admin/items/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"items",
+								"1"
+							]
+						},
+						"description": "Remove grocery items from the system"
+					},
+					"response": []
+				}
+			],
+			"description": "admin role api"
+		},
+		{
+			"name": "user role",
+			"item": [
+				{
+					"name": "get items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/items?pageSize=5&pageNumber=0",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"items"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "pageNumber",
+									"value": "0"
+								}
+							]
+						},
+						"description": "View the list of available grocery items"
+					},
+					"response": []
+				},
+				{
+					"name": "place order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYW5qYW4iLCJpYXQiOjE3MzUxNTIxNjAsImV4cCI6MTczNTE1NTc2MH0.hPscscrrUs7u6T9o3L7iggDgNcwlX4BYONZtDshc4BkpDSs1gTNavlw3lz-gCInvczHVRG6fm5_qX7rkhBnvIQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orders\": [\n        {\n            \"id\": 1,\n            \"itemName\": \"prod1\",\n            \"price\": 20.0,\n            \"quantity\": 2\n        },\n        {\n            \"id\": 2,\n            \"itemName\": \"prod2\",\n            \"price\": 30.0,\n            \"quantity\": 10\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"orders"
+							]
+						},
+						"description": "Ability to book multiple grocery items in a single order"
+					},
+					"response": []
+				}
+			],
+			"description": "User Responsibilities"
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"user1\",\n    \"name\":\"user1\",\n    \"password\":\"1234567\",\n    \"email\":\"user1@demo.com\",\n    \"mobile\": \"9999999999\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						},
+						"description": "Only user can signup. For admin, please see the sql file in project"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"password\":\"1234567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						},
+						"description": "signin of user and admin"
+					},
+					"response": []
+				}
+			],
+			"description": "authorization like signin and signup"
+		}
+	],
+	"auth": {
+		"type": "bearer"
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
